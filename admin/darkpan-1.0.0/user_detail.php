@@ -14,8 +14,8 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
-    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -43,7 +43,7 @@
 
 
         <!-- Sidebar Start -->
-        <?php include './layout/sidebar_page.php'?>
+        <?php include './layout/sidebar_page.php' ?>
         <!-- Sidebar End -->
 
 
@@ -138,71 +138,106 @@
                 </div>
             </nav>
             <!-- Navbar End -->
-
-
-            <!-- Table Start -->
             <div class="container-fluid pt-4 px-4">
+                <div><a class="btn btn-light rounded-pill m-2" href="./table.php">Back</a></div>
                 <div class="row g-4">
-                <div class="col-12">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Responsive Table</h6>
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">STT</th>
-                                            <th scope="col">Họ và tên</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">Giới tính</th>
-                                            <th scope="col">Country</th>
-                                            <th scope="col">ZIP</th>
-                                            <th scope="col">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        for ($i = 0; $i < 5; $i++) {
-                                            echo '<tr>';
-                                            echo '    <th style="vertical-align: middle;" scope="row">'.($i+1).'</th>';
-                                            echo '    <td style="vertical-align: middle;">Vũ Phan</td>';
-                                            echo '    <td style="vertical-align: middle;">jhon@email.com</td>';
-                                            echo '    <td style="vertical-align: middle;">Nam</td>';
-                                            echo '    <td style="vertical-align: middle;">USA</td>';
-                                            echo '    <td style="vertical-align: middle;">123</td>';
-                                            echo '   <td>';
-                                            echo '        <a class="btn btn-info rounded-pill m-2" href="./user_detail.php">Edit</a>';
-                                            echo '       <a class="btn btn-danger rounded-pill m-2" href="">Delete</a>';
-                                            echo '    </td>';
-                                            echo '</tr>';
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
+                    <div class="col-12 col-xl-6">
+                        <div class="col-sm-12 ">
+                            <div class="bg-secondary rounded h-100 p-4">
+                                <h6 class="mb-4">Chi tiết người dùng</h6>
+                                <form>
+                                    <div class="row mb-3">
+                                        <label for="inputEmail3" class="col-sm-2 col-form-label">Họ và tên</label>
+                                        <div class="col-sm-10">
+                                            <input type="email" class="form-control" id="inputEmail3">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                                        <div class="col-sm-10">
+                                            <input type="email" class="form-control" id="inputEmail3">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control" id="inputPassword3">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label for="inputEmail3" class="col-sm-2 col-form-label">Số điện thoại</label>
+                                        <div class="col-sm-10">
+                                            <input type="email" class="form-control" id="inputEmail3">
+                                        </div>
+                                    </div>
+                                    <fieldset class="row mb-3">
+                                        <legend class="col-form-label col-sm-2 pt-0">Giới tính</legend>
+                                        <div class="col-sm-10">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                                                <label class="form-check-label" for="gridRadios1">
+                                                    Nam
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                                <label class="form-check-label" for="gridRadios2">
+                                                    Nữ
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <div class="row mb-3">
+                                        <legend class="col-form-label col-sm-2 pt-0">Checkbox</legend>
+                                        <div class="col-sm-10">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                                <label class="form-check-label" for="gridCheck1">
+                                                    Check me out
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                                <label class="form-check-label" for="gridCheck1">
+                                                    Check me out
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                                <label class="form-check-label" for="gridCheck1">
+                                                    Check me out
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-outline-success m-2">Lưu</button>
+                                </form>
                             </div>
                         </div>
                     </div>
+                </div>
 
-            <!-- Footer Start -->
-            <?php include './layout/footer_page.php' ?>
-            <!-- Footer End -->
+                <!-- Footer Start -->
+                <?php include './layout/footer_page.php' ?>
+                <!-- Footer End -->
+            </div>
+            <!-- Content End -->
+
         </div>
-        <!-- Content End -->
 
-    </div>
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/chart/chart.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/tempusdominus/js/moment.min.js"></script>
+        <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+        <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/chart/chart.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
 </body>
 
 </html>

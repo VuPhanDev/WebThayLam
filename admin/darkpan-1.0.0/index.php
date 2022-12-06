@@ -20,7 +20,6 @@
        <?php include './layout/sidebar_page.php' ?>
         <!-- Sidebar End -->
 
-
         <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->
