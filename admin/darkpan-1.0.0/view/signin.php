@@ -25,7 +25,7 @@
                             </a>
                             <h3>Đăng nhập</h3>
                         </div>
-                        <form action="./userController.php" method="post">
+                        <form action="../controller/userController.php" method="post">
                             <div class="form-floating mb-3">
                                 <input type="email" class="form-control" required="true" name="txt_signin_name" id="txt_signin_name" placeholder="name@example.com">
                                 <label for="txt_signin_name">Email</label>
@@ -41,7 +41,7 @@
                                 </div>
                                 <a href="">Quên mật khẩu</a>
                             </div>
-                            <button type="submit" class="btn btn-primary py-3 w-100 mb-4" name="user_action" value="user_signin">Đăng nhập</button>
+                            <button type="submit" class="btn btn-primary py-3 w-100 mb-4" id="user_action" name="user_action" value="user_signin">Đăng nhập</button>
                             <p class="text-center mb-0">Bạn không có tài khoản? <a href="">Đăng ký</a></p>
                         </form>
                     </div>
@@ -64,6 +64,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
 </body>
 
 </html>

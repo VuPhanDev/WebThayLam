@@ -120,7 +120,7 @@
             </div>
             <div class="row product__filter">
                 <?php
-                include './utils/LTDUtils.php';
+                include '../utils/LTDUtils.php';
 
                 $arrNameProduct = array("Giày xịn", "Giày hơi xịn", "Giày rất xịn", "Giày cũng xịn");
                 $arrPrice = array(10, 5, 15, 7);

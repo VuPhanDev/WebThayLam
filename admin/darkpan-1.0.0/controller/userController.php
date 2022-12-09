@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once 'utils/validation_data.php';
+include_once '../utils/validation_data.php';
 $user_01 = array("username" => "vuphan", "email" => "vuphan@gmail.com", "pass" => "091069");
 $arrUser = array();
 array_push($arrUser, $user_01);
@@ -15,7 +15,7 @@ switch ($user_action) {
             $user = checkUserValid($txt_signin_name, $txt_signin_pass, $arrUser);
             if ($user["isValid"]) {
                 $_SESSION["email"] = $user["email"];
-                header("Location:index.php");
+                header("Location: ../view/index.php");
                 break;
             } else {
                 header("Location: signin.php");
@@ -59,4 +59,3 @@ function checkUserValid($email, $pass, $arrUser = array())
     $userDetail["isValid"] = $isUser;
     return $userDetail;
 }
-

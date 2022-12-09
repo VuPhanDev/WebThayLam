@@ -33,7 +33,7 @@
                         <div class="col-sm-12 ">
                             <div class="bg-secondary rounded h-100 p-4">
                             <h6 class="mb-4" style="text-align: center;">Chi tiết người dùng</h6>
-                                <form action="./userController.php" method="post">
+                                <form action="../controller/userController.php" method="post">
                                     <div class="row mb-3">
                                         <legend class="col-form-label col-sm-2 pt-0">Trạng thái</legend>
                                         <div class="col-sm-10">
