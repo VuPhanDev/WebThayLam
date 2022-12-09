@@ -1,6 +1,7 @@
 <?php
 session_start();
-$user_01 = array("username" => "vuphan", "email" => "vuphan@gmail.com" ,"pass" => "091069");
+include_once 'utils/validation_data.php';
+$user_01 = array("username" => "vuphan", "email" => "vuphan@gmail.com", "pass" => "091069");
 $arrUser = array();
 array_push($arrUser, $user_01);
 
@@ -10,17 +11,22 @@ switch ($user_action) {
         $txt_signin_name = $_POST["txt_signin_name"];
         $txt_signin_pass = $_POST["txt_signin_pass"];
 
-        $user =  checkUserValid($txt_signin_name,$txt_signin_pass, $arrUser);
-        if($user["isValid"]){
-            $_SESSION["email"] = $txt_signin_name;
-            header("Location:table.php");
+        if (checkEmailValid($txt_signin_name)) {
+            $user = checkUserValid($txt_signin_name, $txt_signin_pass, $arrUser);
+            if ($user["isValid"]) {
+                $_SESSION["email"] = $user["email"];
+                header("Location:index.php");
+                break;
+            } else {
+                header("Location: signin.php");
+                break;
+            }
+        } else {
+            header("Location: signin.php");
             break;
-        }else{
-            echo "User name or password don't match";
         }
-        break;
+
     case "user_create":
-    
         break;
 }
 
@@ -45,10 +51,10 @@ function checkUserValid($email, $pass, $arrUser = array())
     $isUser = false;
     $userDetail;
     foreach ($arrUser as $user) {
-            if ($user["email"] == $email && $user["pass"] == $pass) {
-                $userDetail = $user;
-                $isUser = true;
-            }
+        if ($user["email"] == $email && $user["pass"] == $pass) {
+            $userDetail = $user;
+            $isUser = true;
+        }
     }
     $userDetail["isValid"] = $isUser;
     return $userDetail;

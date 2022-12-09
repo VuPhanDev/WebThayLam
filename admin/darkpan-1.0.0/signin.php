@@ -27,11 +27,11 @@
                         </div>
                         <form action="./userController.php" method="post">
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" name="txt_signin_name" id="txt_signin_name" placeholder="name@example.com">
+                                <input type="email" class="form-control" required="true" name="txt_signin_name" id="txt_signin_name" placeholder="name@example.com">
                                 <label for="txt_signin_name">Email</label>
                             </div>
                             <div class="form-floating mb-4">
-                                <input type="password" class="form-control" name="txt_signin_pass" id="txt_signin_pass" placeholder="Password">
+                                <input type="password" class="form-control" required="true" name="txt_signin_pass" id="txt_signin_pass" placeholder="Password">
                                 <label for="txt_signin_pass">Mật khẩu</label>
                             </div>
                             <div class="d-flex align-items-center justify-content-between mb-4">
