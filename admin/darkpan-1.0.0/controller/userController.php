@@ -1,11 +1,12 @@
 <?php
 session_start();
 include_once '../utils/validation_data.php';
-$user_01 = array("username" => "vuphan", "email" => "vuphan@gmail.com", "pass" => "091069");
+include_once '../model/userModel.php';
+$user_01 = new userModel("", "vuphan", "vuphan@gmail.com", "091069", "", "", "", "");
 $arrUser = array();
 array_push($arrUser, $user_01);
-
 $user_action = $_POST["user_action"];
+
 switch ($user_action) {
     case "user_signin":
         $txt_signin_name = $_POST["txt_signin_name"];
@@ -29,33 +30,24 @@ switch ($user_action) {
     case "user_create":
         break;
 }
-
 function checkEmailUser($email, $arrUser = array())
 {
-    $isUser = false;
-    $userDetail;
+    $userDetail = null;
     foreach ($arrUser as $user) {
-        foreach ($user as $key => $value) {
-            if ($key == "email" && $value == $email) {
-                $userDetail = $user;
-                $isUser = true;
-            }
+        if ($user->getEmail == $email) {
+            $userDetail = $user;
         }
     }
-    $userDetail["isValid"] = $isUser;
     return $userDetail;
 }
 
 function checkUserValid($email, $pass, $arrUser = array())
 {
-    $isUser = false;
-    $userDetail;
+    $userDetail = null;
     foreach ($arrUser as $user) {
-        if ($user["email"] == $email && $user["pass"] == $pass) {
+        if ($user -> getEmail == $email && $user -> getPassword == $pass) {
             $userDetail = $user;
-            $isUser = true;
         }
     }
-    $userDetail["isValid"] = $isUser;
     return $userDetail;
 }
