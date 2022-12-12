@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once '../utils/DataValidation.php';
+include_once '../utils/MySQL.php';
 include_once '../model/userModel.php';
 $user_01 = new userModel("1", "vuphan", "vuphan@gmail.com", "091069", "0903833633", "HCM", "Male", "admin");
 $arrUser = array();
@@ -43,6 +44,8 @@ switch ($user_action) {
         } else {
             $user_02 = new userModel($switch_state, $txt_name, $txt_email, $txt_pass, $txt_sdt, $txt_address, $radio_sex, $radio_role);
             array_push($arrUser, $user_02);
+            $dbCon = new MySQL();
+            $dbCon -> disconnectDB();
         }
         break;
 }
