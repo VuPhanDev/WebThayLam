@@ -16,12 +16,9 @@ class MySQL
         $this->password = "";
         $this->dbname = "webthaylam";
         if (self::$conn == null) {
-            echo "Create Connected";
             $this->connectDB();
-        } else {
-            echo "Use old Connected";
-            return self::$conn;
         }
+        return self::$conn;
     }
 
     public function __destruct()
@@ -46,7 +43,12 @@ class MySQL
 
     public function disconnectDB()
     {
-        echo "Dissconnected successfully! <br/>";
         self::$conn = null;
+    }
+
+    public function insertUser($query, $param = array())
+    {
+        $stmt = self::$conn -> prepare($query);
+        $stmt->execute($param);
     }
 }

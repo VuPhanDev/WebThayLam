@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <?php include './layout/header_page.php'?>
+    <?php include './layout/header_page.php' ?>
 </head>
 
 <body>
@@ -24,23 +24,23 @@
         <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->
-            <?php include './layout/header_navbar_page.php'?>
+            <?php include './layout/header_navbar_page.php' ?>
             <!-- Navbar End -->
             <div class="container-fluid pt-4 px-4">
                 <div><a class="btn btn-light rounded-pill m-2" href="./table.php">Back</a></div>
                 <div class="row g-4">
-                    <div class="col-12 col-xl-7">     
+                    <div class="col-12 col-xl-7">
                         <div class="col-sm-12 ">
                             <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4" style="text-align: center;">Chi tiết người dùng</h6>
+                                <h6 class="mb-4" style="text-align: center;">Chi tiết người dùng</h6>
                                 <form action="../controller/userController.php" method="post">
                                     <div class="row mb-3">
                                         <legend class="col-form-label col-sm-2 pt-0">Trạng thái</legend>
                                         <div class="col-sm-10">
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" role="switch" name="switch_state" id="switch_state" value="checked" checked>
-                                                <label class="col-form-label col-sm-2 pt-0" for="switch_state">Hoạt động</label>
-                                            </div>
+                                            <select class="form-select mb-3"name="switch_state" id="switch_state" required>
+                                                <option value="1">Hoạt động</option>
+                                                <option value="0">Ngưng hoạt động</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="row mb-3">
