@@ -1,6 +1,8 @@
 <?php
+include_once '../utils/MySQL.php';
 class userModel
 {
+    private $userid;
     private $state;
     private $username;
     private $email;
@@ -55,4 +57,24 @@ class userModel
         return $this->role;
     }
 
+    public function getUserid()
+    {
+        return $this->userid;
+    }
+
+    public function setUserid($userid)
+    {
+        $this->userid = $userid;
+
+        return $this;
+    }
+
+    public function insertUser(){
+        $dbCon = new MySQL();
+        $query = "INSERT INTO user (name, email, password, phone, address, gender, role, state) VALUES (:name, :email, :password, :phone, :address, :gender, :role, :state)";
+        $param = array(":name"=>$this -> getUsername(),":email"=>$this -> getEmail(),":password"=>$this -> getPassword(),":phone"=>$this -> getPhone(),":address"=>$this -> getAddress(),":gender"=>$this -> getGender(),"role"=>$this -> getRole(),":state"=>$this -> getState());
+        
+        $dbCon->insertUser($query,$param);
+        $dbCon->disconnectDB();
+    }
 }

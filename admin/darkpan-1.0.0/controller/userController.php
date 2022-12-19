@@ -1,7 +1,6 @@
 <?php
 session_start();
 include_once '../utils/DataValidation.php';
-include_once '../utils/MySQL.php';
 include_once '../model/userModel.php';
 $user_01 = new userModel("1", "vuphan", "vuphan@gmail.com", "091069", "0903833633", "HCM", "Male", "admin");
 $arrUser = array();
@@ -39,19 +38,10 @@ switch ($user_action) {
         $radio_sex = $_POST["radio_sex"];
         $radio_role = $_POST["radio_role"];
         $userDetail = checkEmailUser($txt_email, $arrUser);
-        // if(!(is_null($userDetail))){
-        //     header("Location: ../view/user_detail.php?id=".$userDetail -> getEmail());
-        // } else {
-        $query = "INSERT INTO user (name, email, password, phone, address, gender, role, state) VALUES (:name, :email, :password, :phone, :address, :gender, :role, :state)";
-        $param = array(":name"=>$txt_name,":email"=>$txt_email,":password"=>$txt_email,":phone"=>$txt_pass,":address"=>$txt_address,":gender"=>$radio_sex,"role"=>$radio_role,":state"=>$switch_state);
-        
+    
         $user_02 = new userModel($switch_state, $txt_name, $txt_email, $txt_pass, $txt_sdt, $txt_address, $radio_sex, $radio_role);
-        array_push($arrUser, $user_02);
-        
-        $dbCon = new MySQL();
-        $dbCon->insertUser($query,$param);
-        $dbCon->disconnectDB();
-        // }
+        $user_02->insertUser();
+
         break;
 }
 function checkEmailUser($email, $arrUser = array())
