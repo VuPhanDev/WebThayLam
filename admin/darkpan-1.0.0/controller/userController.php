@@ -2,34 +2,63 @@
 session_start();
 include_once '../utils/DataValidation.php';
 include_once '../model/userModel.php';
-$user_01 = new userModel("1", "vuphan", "vuphan@gmail.com", "091069", "0903833633", "HCM", "Male", "admin");
-$arrUser = array();
-array_push($arrUser, $user_01);
-$user_action = $_POST["user_action"];
+include_once './BaseController.php';
+
+class UserController
+{
+    public function insertUser($user)
+    {
+        $user->insertUser();
+    }
+    public function updateUser($user)
+    {
+        $user->updateUser();
+    }
+    public function deleteUser($user)
+    {
+        $user->deleteUser();
+    }
+    public function getUserByID($user)
+    {
+        return $user->getUser();
+    }
+    public function getListUser($user)
+    {
+        return $user->getListUser();
+    }
+}
+
+
 $validData = new DataValidation();
+$user_action = "";
+
+if (count($_POST) > 0) {
+    $user_action = $_POST["user_action"];
+}
+$userController = new UserController();
 
 switch ($user_action) {
     case "user_signin":
         $txt_signin_name = $_POST["txt_signin_name"];
-        $txt_signin_pass = $_POST["txt_signin_pass"];
+        $txt_signin_pass = md5($_POST["txt_signin_pass"]);
 
         if ($validData->checkEmailValid($txt_signin_name)) {
-            $user = checkUserValid($txt_signin_name, $txt_signin_pass, $arrUser);
-            if (!is_null($user)) {
+            $user = new userModel("", "", $txt_signin_name, $txt_signin_pass, "", "", "", "", "");
+            if ($user->getEmail() == $txt_signin_name && $user->getPassword() == $txt_signin_pass) {
                 $_SESSION["email"] = $user->getEmail();
                 header("Location: ../view/index.php");
                 break;
             } else {
-                header("Location: signin.php");
+                header("Location: ../view/signin.php");
                 break;
             }
         } else {
-            header("Location: signin.php");
+            header("Location: ../view/signin.php");
             break;
         }
 
     case "user_create":
-        $switch_state =$_POST["switch_state"];
+        $switch_state = $_POST["switch_state"];
         $txt_name = $_POST["txt_name"];
         $txt_email = $_POST["txt_email"];
         $txt_pass = md5($_POST["txt_pass"]);
@@ -37,31 +66,19 @@ switch ($user_action) {
         $txt_address = $_POST["txt_address"];
         $radio_sex = $_POST["radio_sex"];
         $radio_role = $_POST["radio_role"];
-        $userDetail = checkEmailUser($txt_email, $arrUser);
-    
-        $user_02 = new userModel($switch_state, $txt_name, $txt_email, $txt_pass, $txt_sdt, $txt_address, $radio_sex, $radio_role);
-        $user_02->insertUser();
+        $user = new userModel($switch_state, $txt_name, $txt_email, $txt_pass, $txt_sdt, $txt_address, $radio_sex, $radio_role, 0);
+        $userController->insertUser($user);
+        header("Location: ../controller/userController.php");
+        break;
+    case "user_update":
+        break;
+    case "user_delete":
+        break;
 
+    default:
+        $user = new userModel("", "", "", "", "", "", "", "", 0);
+        $data = $userController->getListUser($user);
+        include_once '../view/user_list.php';
         break;
 }
-function checkEmailUser($email, $arrUser = array())
-{
-    $userDetail = null;
-    foreach ($arrUser as $user) {
-        if ($user->getEmail() == $email) {
-            $userDetail = $user;
-        }
-    }
-    return $userDetail;
-}
-
-function checkUserValid($email, $pass, $arrUser = array())
-{
-    $userDetail = null;
-    foreach ($arrUser as $user) {
-        if ($user->getEmail() == $email && $user->getPassword() == $pass) {
-            $userDetail = $user;
-        }
-    }
-    return $userDetail;
-}
+?>

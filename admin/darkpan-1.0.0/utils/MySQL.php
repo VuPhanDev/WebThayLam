@@ -51,4 +51,29 @@ class MySQL
         $stmt = self::$conn -> prepare($query);
         $stmt->execute($param);
     }
+
+    public function deleteData($query, $param = array()){
+        $stmt = self::$conn -> prepare($query);
+        $stmt -> execute($param);
+        return $stmt -> rowCount();
+    }
+
+    public function getAllData($query){
+        $stmt = self::$conn -> prepare($query);
+        $stmt -> execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getData($query, $param = array()){
+        $stmt = self::$conn -> prepare($query);
+        $stmt -> execute($param);
+        return $stmt ->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function updateData($query, $param = array())
+    {
+        $stmt = self::$conn -> prepare($query);
+        $stmt -> execute($param);
+        return $stmt -> rowCount();
+    }
 }

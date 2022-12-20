@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <?php include './layout/header_page.php' ?>
+    <?php include '../view/layout/header_page.php' ?>
 </head>
 
 <body>
@@ -17,22 +17,22 @@
 
 
         <!-- Sidebar Start -->
-        <?php include './layout/sidebar_page.php' ?>
+        <?php include '../view/layout/sidebar_page.php' ?>
         <!-- Sidebar End -->
 
 
         <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->
-            <?php include './layout/header_navbar_page.php' ?>
+            <?php include '../view/layout/header_navbar_page.php' ?>
             <!-- Navbar End -->
             <div class="container-fluid pt-4 px-4">
-                <div><a class="btn btn-light rounded-pill m-2" href="./table.php">Back</a></div>
+                <div><a class="btn btn-light rounded-pill m-2" href="./user_list.php">Back</a></div>
                 <div class="row g-4">
                     <div class="col-12 col-xl-7">
                         <div class="col-sm-12 ">
                             <div class="bg-secondary rounded h-100 p-4">
-                                <h6 class="mb-4" style="text-align: center;">Chi tiết người dùng</h6>
+                                <h6 class="mb-4" style="text-align: center;">Thêm người dùng</h6>
                                 <form action="../controller/userController.php" method="post">
                                     <div class="row mb-3">
                                         <legend class="col-form-label col-sm-2 pt-0">Trạng thái</legend>
@@ -118,26 +118,14 @@
                 </div>
 
                 <!-- Footer Start -->
-                <?php include './layout/footer_page.php' ?>
+                <?php include '../view/layout/footer_page.php' ?>
                 <!-- Footer End -->
             </div>
             <!-- Content End -->
 
         </div>
 
-        <!-- JavaScript Libraries -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/chart/chart.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        <script src="lib/tempusdominus/js/moment.min.js"></script>
-        <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-        <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
+        <?php include '../view/layout/script_page.php' ?>
 </body>
 
 </html>
