@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <?php include '../layout/header_page.php' ?>
+    <?php include '../view/layout/header_page.php' ?>
 </head>
 
 <body>
@@ -17,17 +17,17 @@
 
 
         <!-- Sidebar Start -->
-        <?php include './layout/sidebar_page.php' ?>
+        <?php include '../view/layout/sidebar_page.php' ?>
         <!-- Sidebar End -->
 
 
         <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->
-            <?php include './layout/header_navbar_page.php' ?>
+            <?php include '../view/layout/header_navbar_page.php' ?>
             <!-- Navbar End -->
             <div class="container-fluid pt-4 px-4">
-                <div><a class="btn btn-light rounded-pill m-2" href="./user_list.php">Back</a></div>
+                <div><a class="btn btn-light rounded-pill m-2" href="../controller/userController.php">Back</a></div>
                 <div class="row g-4">
                     <div class="col-12 col-xl-7">
                         <div class="col-sm-12 ">
@@ -118,7 +118,7 @@
                 </div>
 
                 <!-- Footer Start -->
-                <?php include './layout/footer_page.php' ?>
+                <?php include '../view/layout/footer_page.php' ?>
                 <!-- Footer End -->
             </div>
             <!-- Content End -->

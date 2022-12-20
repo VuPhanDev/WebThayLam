@@ -35,7 +35,7 @@
                     <div class="col-12">
                         <div class="bg-secondary rounded h-100 p-4">
                             <h6 class="mb-4" >Danh sách người dùng</h6>
-                            <a class="btn btn-light m-2" href="./user_add.php">Thêm người dùng</a>
+                            <a class="btn btn-light m-2" href="../view/user_add.php">Thêm người dùng</a>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
@@ -51,16 +51,22 @@
                                     </thead>
                                     <tbody>
                                         <?php
+                                            $state = "";
                                             for ($i = 0; $i < count($data); $i++) {
+                                                if ($data[$i]["state"] == 1){
+                                                $state = "Hoạt động";
+                                                }else{
+                                                $state = "Ngừng hoạt động";
+                                                }
                                                 echo '<tr>';
                                                 echo '    <th style="vertical-align: middle;" scope="row">' . $data[$i]["userID"] . '</th>';
                                                 echo '    <td style="vertical-align: middle;">' . $data[$i]["name"] . '</td>';
                                                 echo '    <td style="vertical-align: middle;">' . $data[$i]["email"] . '</td>';
                                                 echo '    <td style="vertical-align: middle;">' . $data[$i]["gender"] . '</td>';
                                                 echo '    <td style="vertical-align: middle;">' . $data[$i]["phone"] . '</td>';
-                                                echo '    <td style="vertical-align: middle;">' .  $data[$i]["state"] . '</td>';
+                                                echo '    <td style="vertical-align: middle;">' .  $state . '</td>';
                                                 echo '   <td>';
-                                                echo '        <a class="btn btn-info rounded-pill m-2" href="./user_edit.php">Sửa</a>';
+                                                echo '       <a class="btn btn-info rounded-pill m-2" href="../controller/userController.php?action=user_update&id='.$data[$i]["userID"].'">Sửa</a>';
                                                 echo '       <a class="btn btn-danger rounded-pill m-2" href="">Xoá</a>';
                                                 echo '    </td>';
                                                 echo '</tr>';

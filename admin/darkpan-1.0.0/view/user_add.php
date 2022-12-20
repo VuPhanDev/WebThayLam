@@ -27,7 +27,7 @@
             <?php include '../view/layout/header_navbar_page.php' ?>
             <!-- Navbar End -->
             <div class="container-fluid pt-4 px-4">
-                <div><a class="btn btn-light rounded-pill m-2" href="./user_list.php">Back</a></div>
+                <div><a class="btn btn-light rounded-pill m-2" href="../controller/userController.php">Back</a></div>
                 <div class="row g-4">
                     <div class="col-12 col-xl-7">
                         <div class="col-sm-12 ">
