@@ -46,31 +46,31 @@
                                     <div class="row mb-3">
                                         <label for="txt_name" class="col-sm-2 col-form-label">Họ và tên</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="txt_name" id="txt_name">
+                                            <input type="text" required="true" class="form-control" name="txt_name" id="txt_name">
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <label for="txt_email" class="col-sm-2 col-form-label">Email</label>
                                         <div class="col-sm-10">
-                                            <input type="email" class="form-control" name="txt_email" id="txt_email">
+                                            <input type="email" required="true" class="form-control" name="txt_email" id="txt_email">
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <label for="txt_pass" class="col-sm-2 col-form-label">Password</label>
                                         <div class="col-sm-10">
-                                            <input type="password" class="form-control" name="txt_pass" id="txt_pass">
+                                            <input type="password" required="true" class="form-control" name="txt_pass" id="txt_pass">
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <label for="txt_sdt" class="col-sm-2 col-form-label">Số điện thoại</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="txt_sdt" id="txt_sdt">
+                                            <input type="text" required="true" class="form-control" name="txt_sdt" id="txt_sdt">
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <label for="txt_address" class="col-sm-2 col-form-label">Địa chỉ</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="txt_address" id="txt_address">
+                                            <input type="text" required="true" class="form-control" name="txt_address" id="txt_address">
                                         </div>
                                     </div>
                                     <fieldset class="row mb-3">
