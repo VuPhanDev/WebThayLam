@@ -37,79 +37,131 @@
                                     <div class="row mb-3">
                                         <legend class="col-form-label col-sm-2 pt-0">Trạng thái</legend>
                                         <div class="col-sm-10">
-                                            <select class="form-select mb-3"name="switch_state" id="switch_state" required>
+                                            <select class="form-select mb-3" name="switch_state" id="switch_state" required>
+                                                <option value="'.<?php $data["state"] ?>.'" hidden><?php echo $data["state"] == 1 ? "Hoạt động" : "Ngưng hoạt động" ?></option>
                                                 <option value="1">Hoạt động</option>
                                                 <option value="0">Ngưng hoạt động</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="row mb-3">
+                                        <label for="txt_name" class="col-sm-2 col-form-label">Mã người dùng</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" readonly value="<?php echo $data["userID"] ?>" name="txt_id" id="txt_id">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
                                         <label for="txt_name" class="col-sm-2 col-form-label">Họ và tên</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="txt_name" id="txt_name">
+                                            <input type="text" class="form-control" value="<?php echo $data["name"] ?>" name="txt_name" id="txt_name">
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <label for="txt_email" class="col-sm-2 col-form-label">Email</label>
                                         <div class="col-sm-10">
-                                            <input type="email" class="form-control" name="txt_email" id="txt_email">
+                                            <input type="email" class="form-control" value="<?php echo $data["email"] ?>" name="txt_email" id="txt_email">
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <label for="txt_pass" class="col-sm-2 col-form-label">Password</label>
                                         <div class="col-sm-10">
-                                            <input type="password" class="form-control" name="txt_pass" id="txt_pass">
+                                            <input type="password" class="form-control" value="<?php echo $data["password"] ?>" name="txt_pass" id="txt_pass">
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <label for="txt_sdt" class="col-sm-2 col-form-label">Số điện thoại</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="txt_sdt" id="txt_sdt">
+                                            <input type="text" class="form-control" value="<?php echo $data["phone"] ?>" name="txt_sdt" id="txt_sdt">
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <label for="txt_address" class="col-sm-2 col-form-label">Địa chỉ</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" name="txt_address" id="txt_address">
+                                            <input type="text" class="form-control" value="<?php echo $data["address"] ?>" name="txt_address" id="txt_address">
                                         </div>
                                     </div>
-                                    <fieldset class="row mb-3">
-                                        <legend class="col-form-label col-sm-2 pt-0">Giới tính</legend>
-                                        <div class="col-sm-10">
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="radio_sex" id="radio_sex" value="man" checked>
-                                                <label class="form-check-label" for="radio_sex">
-                                                    Nam
-                                                </label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="radio_sex" id="radio_sex" value="woman">
-                                                <label class="form-check-label" for="radio_sex">
-                                                    Nữ
-                                                </label>
-                                            </div>
-                                        </div>
+                                    <?php
+                                    if ($data["gender"] == "man") {
+                                        echo'<fieldset class="row mb-3">';
+                                        echo'    <legend class="col-form-label col-sm-2 pt-0">Giới tính</legend>';
+                                        echo'<div class="col-sm-10">';
+                                        echo'   <div class="form-check form-check-inline">';
+                                        echo'       <input class="form-check-input" type="radio" name="radio_sex" " id="radio_sex" value="man" checked>';
+                                        echo'       <label class="form-check-label" for="radio_sex">';
+                                        echo'           Nam';
+                                        echo'       </label>';
+                                        echo'   </div>';
+                                        echo'   <div class="form-check form-check-inline">';
+                                        echo'       <input class="form-check-input" type="radio" " name="radio_sex" id="radio_sex" value="woman">';
+                                        echo'       <label class="form-check-label" for="radio_sex">';
+                                        echo'           Nữ';
+                                        echo'       </label>';
+                                        echo'   </div>';
+                                        echo'</div>';
+                                        echo'</fieldset>';
+                                    } else {
+                                        echo'<fieldset class="row mb-3">';
+                                        echo'    <legend class="col-form-label col-sm-2 pt-0">Giới tính</legend>';
+                                        echo'<div class="col-sm-10">';
+                                        echo'   <div class="form-check form-check-inline">';
+                                        echo'       <input class="form-check-input" type="radio" name="radio_sex" " id="radio_sex" value="man" >';
+                                        echo'       <label class="form-check-label" for="radio_sex">';
+                                        echo'           Nam';
+                                        echo'       </label>';
+                                        echo'   </div>';
+                                        echo'   <div class="form-check form-check-inline">';
+                                        echo'       <input class="form-check-input" type="radio" " name="radio_sex" id="radio_sex" value="woman" checked>';
+                                        echo'       <label class="form-check-label" for="radio_sex">';
+                                        echo'           Nữ';
+                                        echo'       </label>';
+                                        echo'   </div>';
+                                        echo'</div>';
+                                        echo'</fieldset>';
+                                    }
 
-                                    </fieldset>
+                                    ?>
 
-                                    <fieldset class="row mb-3">
-                                        <legend class="col-form-label col-sm-2 pt-0">Vai trò</legend>
-                                        <div class="col-sm-10">
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="radio_role" id="radio_role" value="admin" checked>
-                                                <label class="form-check-label" for="radio_role">
-                                                    Admin
-                                                </label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="radio_role" id="radio_role" value="user">
-                                                <label class="form-check-label" for="radio_role">
-                                                    User
-                                                </label>
-                                            </div>
-                                        </div>
+                                    <?php
+                                    if ($data["role"] == "admin") {
+                                        echo '<fieldset class="row mb-3">';
+                                        echo '    <legend class="col-form-label col-sm-2 pt-0">Vai trò</legend>';
+                                        echo '  <div class="col-sm-10">';
+                                        echo '  <div class="form-check form-check-inline">';
+                                        echo '      <input class="form-check-input" type="radio" name="radio_role" id="radio_role" value="admin" checked>';
+                                        echo '      <label class="form-check-label" for="radio_role">';
+                                        echo '          Admin';
+                                        echo '      </label>';
+                                        echo '  </div>';
+                                        echo '  <div class="form-check form-check-inline">';
+                                        echo '      <input class="form-check-input" type="radio" name="radio_role" id="radio_role" value="user">';
+                                        echo '      <label class="form-check-label" for="radio_role">';
+                                        echo '          User';
+                                        echo '      </label>';
+                                        echo '  </div>';
+                                        echo '</div>';
+                                        echo '</fieldset>';
+                                    } else {
+                                        echo '<fieldset class="row mb-3">';
+                                        echo '    <legend class="col-form-label col-sm-2 pt-0">Vai trò</legend>';
+                                        echo '  <div class="col-sm-10">';
+                                        echo '  <div class="form-check form-check-inline">';
+                                        echo '      <input class="form-check-input" type="radio" name="radio_role" id="radio_role" value="admin" >';
+                                        echo '      <label class="form-check-label" for="radio_role">';
+                                        echo '          Admin';
+                                        echo '      </label>';
+                                        echo '  </div>';
+                                        echo '  <div class="form-check form-check-inline">';
+                                        echo '      <input class="form-check-input" type="radio" name="radio_role" id="radio_role" value="user" checked>';
+                                        echo '      <label class="form-check-label" for="radio_role">';
+                                        echo '          User';
+                                        echo '      </label>';
+                                        echo '  </div>';
+                                        echo '</div>';
+                                        echo '</fieldset>';
+                                    }
 
-                                    </fieldset>
+                                    ?>
+
                                     <button type="submit" class="btn btn-outline-success m-2" name="user_action" value="user_update">Cập nhập</button>
                                 </form>
                             </div>

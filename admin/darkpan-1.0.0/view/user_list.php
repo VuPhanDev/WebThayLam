@@ -52,22 +52,22 @@
                                     <tbody>
                                         <?php
                                             $state = "";
-                                            for ($i = 0; $i < count($data); $i++) {
-                                                if ($data[$i]["state"] == 1){
+                                            for ($i = 0; $i < count($data["user"]); $i++) {
+                                                if ($data["user"][$i]["state"] == 1){
                                                 $state = "Hoạt động";
                                                 }else{
                                                 $state = "Ngừng hoạt động";
                                                 }
                                                 echo '<tr>';
-                                                echo '    <th style="vertical-align: middle;" scope="row">' . $data[$i]["userID"] . '</th>';
-                                                echo '    <td style="vertical-align: middle;">' . $data[$i]["name"] . '</td>';
-                                                echo '    <td style="vertical-align: middle;">' . $data[$i]["email"] . '</td>';
-                                                echo '    <td style="vertical-align: middle;">' . $data[$i]["gender"] . '</td>';
-                                                echo '    <td style="vertical-align: middle;">' . $data[$i]["phone"] . '</td>';
+                                                echo '    <th style="vertical-align: middle;" scope="row">' . $data["user"][$i]["userID"] . '</th>';
+                                                echo '    <td style="vertical-align: middle;">' . $data["user"][$i]["name"] . '</td>';
+                                                echo '    <td style="vertical-align: middle;">' . $data["user"][$i]["email"] . '</td>';
+                                                echo '    <td style="vertical-align: middle;">' . $data["user"][$i]["gender"] . '</td>';
+                                                echo '    <td style="vertical-align: middle;">' . $data["user"][$i]["phone"] . '</td>';
                                                 echo '    <td style="vertical-align: middle;">' .  $state . '</td>';
                                                 echo '   <td>';
-                                                echo '       <a class="btn btn-info rounded-pill m-2" href="../controller/userController.php?action=user_update&id='.$data[$i]["userID"].'">Sửa</a>';
-                                                echo '       <a class="btn btn-danger rounded-pill m-2" href="">Xoá</a>';
+                                                echo '       <a class="btn btn-info rounded-pill m-2" href="../controller/userController.php?action=user_edit&id='.$data["user"][$i]["userID"].'">Sửa</a>';
+                                                echo '       <a class="btn btn-danger rounded-pill m-2" href="../controller/userController.php?action=user_delete&id='.$data["user"][$i]["userID"].'">Xoá</a>';
                                                 echo '    </td>';
                                                 echo '</tr>';
                                             }

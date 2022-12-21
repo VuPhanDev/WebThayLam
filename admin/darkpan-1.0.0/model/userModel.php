@@ -100,7 +100,7 @@ class userModel
         $user = $dbCon->getData($query,$param);
         $dbCon->disconnectDB();
 
-        return  $user;
+        return  $user[0];
     }
 
     public function getListUser(){
