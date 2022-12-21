@@ -103,17 +103,6 @@ class userModel
         return  $user[0];
     }
 
-    public function getListUser(){
-        $dbCon = new MySQL();
-
-        $query = "SELECT * FROM webthaylam.user ";
-
-        $listUser = $dbCon->getAllData($query);
-        $dbCon->disconnectDB();
-
-        return  $listUser;
-    }
-
     public function getUserByEmail()
     {
     	$db = new MySQL();
@@ -125,7 +114,18 @@ class userModel
     	$db->disconnectDB();
     	return $data[0];
     }
-    
+
+    public function getListUser(){
+        $dbCon = new MySQL();
+
+        $query = "SELECT * FROM webthaylam.user ";
+
+        $listUser = $dbCon->getAllData($query);
+        $dbCon->disconnectDB();
+
+        return  $listUser;
+    }
+
     public function deleteUser(){
         $dbCon = new MySQL();
 

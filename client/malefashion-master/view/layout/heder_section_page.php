@@ -10,8 +10,8 @@
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
                             <div class="header__top__links">
-                                <a href="../view/login/signin_signup.php">Sign in</a>
-                                <a href="#">FAQs</a>
+                                <a href="../view/signin_signup.php">Sign in</a>
+                                <a href="#">Log out</a>
                             </div>
                             <div class="header__top__hover">
                                 <span>Usd <i class="arrow_carrot-down"></i></span>
