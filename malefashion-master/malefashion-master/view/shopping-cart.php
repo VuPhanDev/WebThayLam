@@ -2,16 +2,16 @@
 <html lang="zxx">
 
 <head>
-    <?php include 'layout/headerpage.php' ?>
+    <?php include '../view/layout/headerpage.php' ?>
 </head>
 
 <body>
     <!-- Offcanvas Menu Begin -->
-    <?php include 'layout/menu_page.php' ?>
+    <?php include '../view/layout/menu_page.php' ?>
     <!-- Offcanvas Menu End -->
 
     <!-- Header Section Begin -->
-    <?php include 'layout/heder_section_page.php'  ?>
+    <?php include '../view/layout/heder_section_page.php'  ?>
     <!-- Header Section End -->
 
     <!-- Breadcrumb Section Begin -->
@@ -49,86 +49,30 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="product__cart__item">
-                                        <div class="product__cart__item__pic">
-                                            <img src="img/shopping-cart/cart-1.jpg" alt="">
-                                        </div>
-                                        <div class="product__cart__item__text">
-                                            <h6>T-shirt Contrast Pocket</h6>
-                                            <h5>$98.49</h5>
-                                        </div>
-                                    </td>
-                                    <td class="quantity__item">
-                                        <div class="quantity">
-                                            <div class="pro-qty-2">
-                                                <input type="text" value="1">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="cart__price">$ 30.00</td>
-                                    <td class="cart__close"><i class="fa fa-close"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="product__cart__item">
-                                        <div class="product__cart__item__pic">
-                                            <img src="img/shopping-cart/cart-2.jpg" alt="">
-                                        </div>
-                                        <div class="product__cart__item__text">
-                                            <h6>Diagonal Textured Cap</h6>
-                                            <h5>$98.49</h5>
-                                        </div>
-                                    </td>
-                                    <td class="quantity__item">
-                                        <div class="quantity">
-                                            <div class="pro-qty-2">
-                                                <input type="text" value="1">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="cart__price">$ 32.50</td>
-                                    <td class="cart__close"><i class="fa fa-close"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="product__cart__item">
-                                        <div class="product__cart__item__pic">
-                                            <img src="img/shopping-cart/cart-3.jpg" alt="">
-                                        </div>
-                                        <div class="product__cart__item__text">
-                                            <h6>Basic Flowing Scarf</h6>
-                                            <h5>$98.49</h5>
-                                        </div>
-                                    </td>
-                                    <td class="quantity__item">
-                                        <div class="quantity">
-                                            <div class="pro-qty-2">
-                                                <input type="text" value="1">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="cart__price">$ 47.00</td>
-                                    <td class="cart__close"><i class="fa fa-close"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="product__cart__item">
-                                        <div class="product__cart__item__pic">
-                                            <img src="img/shopping-cart/cart-4.jpg" alt="">
-                                        </div>
-                                        <div class="product__cart__item__text">
-                                            <h6>Basic Flowing Scarf</h6>
-                                            <h5>$98.49</h5>
-                                        </div>
-                                    </td>
-                                    <td class="quantity__item">
-                                        <div class="quantity">
-                                            <div class="pro-qty-2">
-                                                <input type="text" value="1">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="cart__price">$ 30.00</td>
-                                    <td class="cart__close"><i class="fa fa-close"></i></td>
-                                </tr>
+                                <?php
+                                for ($i = 0; $i < count($data["cart"]); $i++) {
+                                    echo '<tr>';
+                                    echo '   <td class="product__cart__item">';
+                                    echo '   <div class="product__cart__item__pic">';
+                                    echo '       <img src="../view/img/product/'.$data["cart"][$i]["image"] .'" alt="" width="50">';
+                                    echo '   </div>';
+                                    echo '   <div class="product__cart__item__text">';
+                                    echo '       <h6>T-shirt Contrast Pocket</h6>';
+                                    echo '       <h5>444</h5>';
+                                    echo '   </div>';
+                                    echo '</td>';
+                                    echo '<td class="quantity__item">';
+                                    echo '   <div class="quantity">';
+                                    echo '       <div class="pro-qty-2">';
+                                    echo '           <input type="text" value="1">';
+                                    echo '       </div>';
+                                    echo '   </div>';
+                                    echo '</td>';
+                                    echo '<td class="cart__price">$ 30.00</td>';
+                                    echo '<td class="cart__close"><i class="fa fa-close"></i></td>';
+                                    echo '</tr>';
+                                }
+                                ?>
                             </tbody>
                         </table>
                     </div>
@@ -168,7 +112,7 @@
     <!-- Shopping Cart Section End -->
 
     <!-- Footer Section Begin -->
-    <?php include 'layout/footer_section_page.php' ?>
+    <?php include '../view/layout/footer_section_page.php' ?>
     <!-- Footer Section End -->
 </body>
 
