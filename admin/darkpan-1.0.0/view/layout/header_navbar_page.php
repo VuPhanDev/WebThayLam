@@ -13,7 +13,7 @@
         if (isset($_SESSION["email"])) {
             echo '<div class="nav-item dropdown">';
             echo '    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">';
-            echo '  <img class="rounded-circle me-lg-2" src="../view/img/user.jpg" alt="" style="width: 40px; height: 40px;">';
+            echo '  <img class="rounded-circle me-lg-2" src="../view/img/avt.jpg" alt="" style="width: 40px; height: 49px;">';
             echo '  <span class="d-none d-lg-inline-flex"> ' . $_SESSION["email"] . ' </span>';
             echo '</a>';
             echo '<div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">';

@@ -23,7 +23,7 @@ class UserController extends BaseController
                     header("Location: ../view/signin.php");
                     break;
                 }
-
+           
             case "user_create":
                 $switch_state = $_POST["switch_state"];
                 $txt_name = $_POST["txt_name"];

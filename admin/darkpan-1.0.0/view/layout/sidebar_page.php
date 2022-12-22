@@ -7,10 +7,10 @@
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Quản lý</a>
                 <div class="dropdown-menu bg-transparent border-0">
-                    <a href="../controller/userController.php" class="dropdown-item"><i class="fa fa-table me-2"></i>Danh sách người dùng</a>
-                    <!-- <a href="user_list.php" class="dropdown-item"><i class="fa fa-table me-2"></i>Loại sản phẩm</a>
-                    <a href="user_list.php" class="dropdown-item"><i class="fa fa-table me-2"></i>Sản Phẩm</a>
-                    <a href="user_list.php" class="dropdown-item"><i class="fa fa-table me-2"></i>Loại sản phẩm</a> -->
+                    <a href="../controller/userController.php" class="dropdown-item"><i class="fa fa-table me-2"></i>DS Người Dùng</a>
+                    <a href="../controller/productController.php" class="dropdown-item"><i class="fa fa-table me-2"></i>DS Sản Phẩm</a>
+                    <a href="user_list.php" class="dropdown-item"><i class="fa fa-table me-2"></i>DS Danh Mục Sản Phẩm</a>
+                    <a href="user_list.php" class="dropdown-item"><i class="fa fa-table me-2"></i>DS Hoá Đơn</a>
                 </div>
             </div>
         </div>
